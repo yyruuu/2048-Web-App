@@ -194,6 +194,8 @@ $(document).keydown(function(event){
 
 //事件监听器
 document.addEventListener('touchstart', function(event){
+  event.preventDefault();
+
   //event.touches用来存储触控的信息，是一个数组，可以保存多点触控的信息 这里只需要单指
   startx = event.touches[0].pageX;
   starty = event.touches[0].pageY;
@@ -202,6 +204,8 @@ document.addEventListener('touchmove', function(event){
   event.preventDefault();
 });
 document.addEventListener('touchend', function(event){
+  event.preventDefault();
+
   //触摸结束时，调用changedTouches里的信息
   endx = event.changedTouches[0].pageX;
   endy = event.changedTouches[0].pageY;
