@@ -151,6 +151,7 @@ $(document).keydown(function(event){
   //按钮按下事件
   switch(event.keyCode){
     case 37: //left
+    event.preventDefault();
       if(moveLeft()){
           //能否向左移动
           setTimeout(generateOneNumber, 210);
@@ -159,6 +160,7 @@ $(document).keydown(function(event){
         };
       break;
     case 38: //up
+    event.preventDefault();
       if(moveUp()){
         //能否向左移动
         setTimeout(generateOneNumber, 210);
@@ -168,6 +170,7 @@ $(document).keydown(function(event){
       return false;//阻止默认行为
       break;
     case 39: //right
+    event.preventDefault();
       if(moveRight()){
         //能否向左移动
         setTimeout(generateOneNumber, 210);
@@ -176,6 +179,7 @@ $(document).keydown(function(event){
       };
       break;
     case 40: //down
+    event.preventDefault();
       if(moveDown()){
         //能否向左移动
         setTimeout(generateOneNumber, 210);
@@ -194,6 +198,9 @@ document.addEventListener('touchstart', function(event){
   startx = event.touches[0].pageX;
   starty = event.touches[0].pageY;
 });
+document.addEventListener('touchmove', function(event){
+  event.preventDefault();
+});
 document.addEventListener('touchend', function(event){
   //触摸结束时，调用changedTouches里的信息
   endx = event.changedTouches[0].pageX;
@@ -210,9 +217,10 @@ document.addEventListener('touchend', function(event){
   if(Math.abs(deltax) >= Math.abs(deltay)){
     //在x方向
     if(deltax > 0){
+
       //向右滑动
       if(moveRight()){
-        event.preventDefault();
+        
         //能否向左移动
         setTimeout(generateOneNumber, 210);
           //game over?
@@ -223,7 +231,7 @@ document.addEventListener('touchend', function(event){
     }else{
       //向左
       if(moveLeft()){
-        event.preventDefault();
+        
         //能否向左移动
         setTimeout(generateOneNumber, 210);
         //game over?
@@ -236,7 +244,7 @@ document.addEventListener('touchend', function(event){
     if(deltay > 0){
       //向下
       if(moveDown()){
-        event.preventDefault();
+       
         //能否向左移动
         setTimeout(generateOneNumber, 210);
           //game over?
@@ -246,7 +254,7 @@ document.addEventListener('touchend', function(event){
     }else{
       //向上
       if(moveUp()){
-        event.preventDefault();
+        
         //能否向左移动
         setTimeout(generateOneNumber, 210);
           //game over?
