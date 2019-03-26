@@ -212,6 +212,7 @@ document.addEventListener('touchend', function(event){
     if(deltax > 0){
       //向右滑动
       if(moveRight()){
+        event.preventDefault();
         //能否向左移动
         setTimeout(generateOneNumber, 210);
           //game over?
@@ -222,6 +223,7 @@ document.addEventListener('touchend', function(event){
     }else{
       //向左
       if(moveLeft()){
+        event.preventDefault();
         //能否向左移动
         setTimeout(generateOneNumber, 210);
         //game over?
@@ -234,21 +236,23 @@ document.addEventListener('touchend', function(event){
     if(deltay > 0){
       //向下
       if(moveDown()){
+        event.preventDefault();
         //能否向左移动
         setTimeout(generateOneNumber, 210);
           //game over?
         setTimeout(isgameover, 300);
       };
-      return false;
+      
     }else{
       //向上
       if(moveUp()){
+        event.preventDefault();
         //能否向左移动
         setTimeout(generateOneNumber, 210);
           //game over?
         setTimeout(isgameover, 300);
       };
-      return false;
+     
     }
   }
 });
