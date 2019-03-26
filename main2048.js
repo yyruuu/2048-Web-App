@@ -13,9 +13,9 @@ var endy = 0;
 $(document).ready(function(){
   prepareForMobile();
   newgame();
-  $('body').on('touchmove', function (event) {
-    event.preventDefault();
-    });  
+  document.querySelector('body').addEventListener('touchmove', stopScroll, false);
+
+
 });
 
 
