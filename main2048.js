@@ -216,7 +216,9 @@ document.addEventListener('touchend', function(event){
         setTimeout(generateOneNumber, 210);
           //game over?
         setTimeout(isgameover, 300);
+        
       };
+      return false;
     }else{
       //向左
       if(moveLeft()){
@@ -226,6 +228,7 @@ document.addEventListener('touchend', function(event){
         setTimeout(isgameover, 300);
       };
     }
+    return false;
   }else{
     //在y方向
     if(deltay > 0){
@@ -236,7 +239,7 @@ document.addEventListener('touchend', function(event){
           //game over?
         setTimeout(isgameover, 300);
       };
-      // return false;
+      return false;
     }else{
       //向上
       if(moveUp()){
@@ -245,6 +248,7 @@ document.addEventListener('touchend', function(event){
           //game over?
         setTimeout(isgameover, 300);
       };
+      return false;
     }
   }
 });
