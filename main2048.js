@@ -13,6 +13,9 @@ var endy = 0;
 $(document).ready(function(){
   prepareForMobile();
   newgame();
+  $('body').on('touchmove', function (event) {
+    event.preventDefault();
+    });  
 });
 
 
@@ -201,9 +204,7 @@ document.addEventListener('touchstart', function(event){
   startx = event.touches[0].pageX;
   starty = event.touches[0].pageY;
 });
-$('body').on('touchmove', function (event) {
-  event.preventDefault();
-  });  
+
 document.addEventListener('touchend', function(event){
   event.preventDefault();
   //触摸结束时，调用changedTouches里的信息
