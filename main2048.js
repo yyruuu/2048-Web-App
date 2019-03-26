@@ -15,6 +15,7 @@ $(document).ready(function(){
   newgame();
 });
 
+
 function prepareForMobile(){
   if(documentWidth > 500){
     gridContainerWidth = 500;
@@ -200,12 +201,11 @@ document.addEventListener('touchstart', function(event){
   startx = event.touches[0].pageX;
   starty = event.touches[0].pageY;
 });
-document.addEventListener('touchmove', function(event){
+$('body').on('touchmove', function (event) {
   event.preventDefault();
-});
+  });  
 document.addEventListener('touchend', function(event){
   event.preventDefault();
-
   //触摸结束时，调用changedTouches里的信息
   endx = event.changedTouches[0].pageX;
   endy = event.changedTouches[0].pageY;
